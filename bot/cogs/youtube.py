@@ -2,6 +2,7 @@ import asyncio
 import base64
 import os
 import re
+import tempfile
 from collections import deque
 from pathlib import Path
 
@@ -13,8 +14,8 @@ from discord import app_commands
 from discord.ext import commands
 
 FFMPEG_EXE = imageio_ffmpeg.get_ffmpeg_exe()
-COOKIES_PATH = "/tmp/yt_cookies.txt"
-TEMP_AUDIO_DIR = Path("/tmp/norse_audio")
+COOKIES_PATH = str(Path(tempfile.gettempdir()) / "yt_cookies.txt")
+TEMP_AUDIO_DIR = Path(tempfile.gettempdir()) / "norse_audio"
 TEMP_AUDIO_DIR.mkdir(exist_ok=True)
 
 PIPED_INSTANCES = [
