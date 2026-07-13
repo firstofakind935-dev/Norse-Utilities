@@ -71,19 +71,20 @@ class Welcome(commands.Cog):
         member_number = ordinal(member.guild.member_count)
 
         embed = discord.Embed(
-            title="<:Flag:1504848692195365065> Welcome!",
+            title="🇳🇴 Welcome!",
             description=(
-                f"<:KE_Arrow:1510682534189731910> We're pleased to have you here. Kindly proceed to {verify_mention} "
+                f"➡️ We're pleased to have you here. Kindly proceed to {verify_mention} "
                 f"to complete your verification and gain full access.\n\n"
-                f"<:KE_Arrow:1510682534189731910> If you require any assistance, feel free to reach out at any time at "
+                f"➡️ If you require any assistance, feel free to reach out at any time at "
                 f"{helpdesk_mention}."
             ),
             color=discord.Color(0x0B1F3A),
         )
+        embed.set_thumbnail(url="https://flagcdn.com/w320/no.png")
         embed.set_image(url=BANNER_URL)
 
         await channel.send(
-            f"<:Flag:1504848692195365065> Welcome to **Norse Air PTFS** {member.mention}! "
+            f"🇳🇴 Welcome to **Norse Air PTFS** {member.mention}! "
             f"you are our **{member_number}** member",
             embed=embed,
         )
